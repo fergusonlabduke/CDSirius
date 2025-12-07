@@ -25,7 +25,7 @@ can be executed by running the *node.py* script directly. Similarly, the running
 to destroy running SIRIUS service if still running.
 
 
-## Requirements
+## Dependencies
 
 - Fully licensed installation of Compound Discoverer 3.5.
 - SIRIUS user account.
@@ -63,6 +63,45 @@ check the "Unblock" checkbox if available.
 
 9) Restart Compound Discoverer to complete installation and allow new nodes to be registered.
 
+## Using CDSirius within a Compound Discoverer workflow
+The CDSirius node is a "Compound Identification" node that can be included in an existing full processing workflow, or it can be used in a "reprocessing" workflow to retrospectively add Sirius results to the cdResult file.  Either way, you will find the Search by SIRIUS node within the Workflow Editor Node menu, in the _7. Compound Identification_ sub menu:
+
+   <img width="194" alt="CDSirius icon" src="https://github.com/user-attachments/assets/7c79ea76-a1dc-41f3-9905-7e460650efb6" />
+
+After adding the node to the workflow, the processing configuration dialogue is available for editing.  Default parameters are provided for most settings:
+
+   <img width="650" alt="CDSirius params" src="https://github.com/user-attachments/assets/b084e2b2-27ff-429b-ab1c-a6453443ac01" />
+
+   **Figure 1.** Sirius node parameter configuration.
+
+### CDSirius parameter settings
+The range of possible settings for Sirius is very large and the corresponding job configurations can become quite complicated.  The settings available within cdSirius represent a subset of possible parameters, chosen based on their general applicability and typical use cases.  A complete guide for Sirius job parameters is beyond the scope of this program, but extensive documentation is available for Sirius [elsewhere](https://v6.docs.sirius-ms.io/methods-background/).
+1.  **General Settings:**  These are global settings for the Sirius program service.
+   - <ins>MS1 Mass Tolerance</ins>: The known mass accuracy threshold (in ppm) for your MS1 data.  Default = 2 ppm.  _This is a critical parameter and must be set accordingly.  If your instrument is equipped with EasyIC, it is suggested that you use it_`
+   - <ins>MS2 Mass Tolerance</ins>: The known mass accuracy threshold (in ppm) for your MS2 data.  Default = 5 ppm.  _This is also critical and is often a less accurate measure than for MS1, especially when using lower resolutions (e.g. 15K).  It is not recommended to use EasyIC for Orbitrap MS2 with resolutions < 60K_
+   - <ins>Predict Compound Classes</ins>: When this parameter is set to "True", the CANOPUS implementation of the ClassyFire algorithm is used to predict compound classes from molecular fingerprints.
+   - <ins>Predict Structures</ins>: Toggle enabling CSI:FingerID database search
+   - <ins>Predict de-Novo Structures</ins>: Enables or disables MSNovelist processing.  **Caution:** MSNovelist is quite computationally intensive.  Be careful when using this toolset with full (unfiltered) compound sets from Compound Discoverer, as the job compute times can become extremely long.
+   - <ins>Molecular Weight Threshold</ins>: Sirius computation becomes extremely slow for large molecules, so it is best to limit the upper MW range to only those of interest for a particular analysis.  Default = 1500
+2.  **Formula Prediction:**  This set of parameters controls the "base" molecular formula calculation functions within Sirius and is necessary for all further processing
+   - <ins>Max Formula Candidates</ins>: Adjust to increase or decrease the allowable formula candidates that can be considered by Sirius.  Default = 10.
+   - <ins>Elemental Constraints</ins>: Use this string to specify which elements should be considered for _de novo_ formula prediction.  Numbers represent maximum possible element counts.  Elements without numbers are given unlimited maximum counts.  **Note:** Do not include B, Cl, Br, S, or Se in this list, as those elements are detected automatically using observed isotope patterns in the MS1 spectra.
+   - <ins>Check Isotope Pattern</ins>: Enabling this parameter will use isotope pattern measurement as a pre-filter to exclude formulas that are inconsistent with the measured isotope pattern, regardless of MS/MS tree score.
+   - <ins>Enforce Recognized Lipids</ins>: This setting enables an internal Sirius algorithm that attempts to detect fragmentation patterns characteristic of lipids.  When detected, the corresponding lipid-like molecular formula will be prioritized as a candidate.
+   - <ins>Bottom-Up Search</ins>: This setting allows for the use of a "bottom-up" formula candidate selection strategy, which uses combinations of known formulas for potential sub-fragments to build candidate molecular formulas.  It is less restrictive than searching a database for candidate formulas but is also less computationally-intensive than a true _de novo_ formula prediction strategy.
+   - <ins>_De-novo_ Mass Threshold</ins>: Below this _m/z_, all molecular formulas are calculated using a _de novo_ approach, which maximizes the chance to observe novel formulas (which are not present in any databases).  Above this _m/z_, formula candidates are predicted using the "bottom-up" strategy if enabled above.
+3.  **Class Prediction:**  This parameter set controls the CANOPUS classification algorithm.
+   - <ins>Classes to Push</ins>: Select the ClassyFire taxonomy levels of interest that will be pushed to the Compounds table in the Compound Discoverer Results.   
+4.  **Structure Prediction:**  These settings control the CSI:FingerID structure prediction toolset within Sirius.
+   - <ins>Max Structure Candidates</ins>: This parameter limits the number of structure candidates scored by CSI:FingerID (when enabled) and reported back to Compound Discoverer.  Default = 10, Max = 500.  _This is a critical parameter and it is recommended that the maximum value of 500 be used in most cases_
+   - <ins>Max De-Novo Structure Candidates</ins>: This parameter limits the number of structure candidates scored by MSNovelist (when enabled) and reported back to Compound Discoverer.  Default = 10, Max = 500.  _Large numbers of de novo structure candidates may cause a significant increase in processing time.  This parameter should be increased with caution_
+   - <ins>Databases</ins>: Select from an abbreviated list of databases for providing structure candidates to score.
+   - <ins>PubChem as Fallback</ins>: CDSirius uses defined structure databases for searching compound structure candidates.  When PubChem is not selected as a database and this parameter is set to "True", Sirius will search PubChem for structure candidates in the event that no viable structure candidates were found within the target database(s).
+5.  **SIRIUS Settings:**  These settings control handling of Sirius project space output.  
+   - <ins>Keep Project Space</ins>: Setting this to `True` will enable the .sirius workspace to be persisted as a permanent file, saved to the same directory with the cdResult file.  This is useful if e.g. you plan to re-open and analyze data using the Sirius GUI at a later time.
+   - <ins>Keep Fingerprints</ins>: This setting will toggle saving tab-separated ASCII files (.txt) containing the predicted fingerprints for compounds processed in Sirius as well as the fingerprint definition key used by Sirius.  These files will be saved to the same directory as the cdResult file.
+6.  **Reprocessing:**
+   -  <ins>Checked Only</ins>: This is a switch that allows for down-selection of only compounds of interest when CDSirius is used in reprocessing of existing cdResult files.  Selecting "Checked" will pass only "checked" compounds to Sirius for calculation. The default of "All" will pass all compounds to the Sirius service.  **Note**: The default setting of "False" must be used when including the CDSirius node in a full processing workflow.  Checked status is only available for reprocessing of previously processed results.
 
 ## Changelog
 
