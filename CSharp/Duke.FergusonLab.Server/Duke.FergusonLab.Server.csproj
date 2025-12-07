@@ -1,0 +1,120 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Duke.FergusonLab.Server</AssemblyName>
+    <RootNamespace>Duke.FergusonLab.Server</RootNamespace>
+    <LangVersion>8</LangVersion>
+
+    <Version>1.7.0</Version>
+    <AssemblyVersion>1.7.0.0</AssemblyVersion>
+    <FileVersion>1.7.0.0</FileVersion>
+
+    <Authors>P. Lee Ferguson</Authors>
+    <Company>Environmental Analytical Chemistry Laboratory, Duke University</Company>
+    <Product>SIRIUS Search Node</Product>
+    <Description>Compound Discoverer SIRIUS Integration Node</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+    <OutputType>Library</OutputType>
+
+    <CopyFrameworkReferences>false</CopyFrameworkReferences>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>..\bin\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputPath>..\bin\</OutputPath>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\IMG_SIRIUS_16x16.png" />
+    <None Remove="Images\IMG_SIRIUS_32x32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\IMG_SIRIUS_16x16.png" />
+    <EmbeddedResource Include="Images\IMG_SIRIUS_32x32.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Duke.FergusonLab.Common\Duke.FergusonLab.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Thermo.Magellan.BL.Data">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.BL.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.BL.DomainObjects">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.BL.DomainObjects.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.BL.Processing">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.BL.Processing.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.BL.Processing.Interfaces">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.BL.Processing.Interfaces.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.Core">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.EntityDataFramework">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.EntityDataFramework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.MassSpec">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.MassSpec.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.MassSpec.Server">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.MassSpec.Server.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.Processing.Parameter">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.Processing.Parameter.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.Processing.Workflow">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.Processing.Workflow.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.Utilities">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.Utilities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.DataObjects">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.DataObjects.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.DomainObjects">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.DomainObjects.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.Services.MassFrontier">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.Services.MassFrontier.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Duke.FergusonLab.Common</AssemblyName>
+    <RootNamespace>Duke.FergusonLab.Common</RootNamespace>
+    <LangVersion>8</LangVersion>
+
+    <Version>1.7.0</Version>
+    <AssemblyVersion>1.7.0.0</AssemblyVersion>
+    <FileVersion>1.7.0.0</FileVersion>
+
+    <Authors>P. Lee Ferguson</Authors>
+    <Company>Environmental Analytical Chemistry Laboratory, Duke University</Company>
+    <Product>SIRIUS Search Node</Product>
+    <Description>Compound Discoverer SIRIUS Integration Node</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+    <OutputType>Library</OutputType>
+
+    <CopyFrameworkReferences>false</CopyFrameworkReferences>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>..\bin\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputPath>..\bin\</OutputPath>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Thermo.Discoverer.Infrastructure.Common">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Discoverer.Infrastructure.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Discoverer.Infrastructure.Composite">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Discoverer.Infrastructure.Composite.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.EntityDataFramework">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.EntityDataFramework.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Magellan.Utilities">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Magellan.Utilities.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.DataObjects">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.DataObjects.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.Services">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.Services.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Thermo.Metabolism.Services.Interfaces">
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Metabolism.Services.Interfaces.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+{
+    "ProjectName": "project_space",
+    "ProjectPath": "project_space.sirius",
+    "FingerprintsPath": "project_space",
+    
+    "SaveFingerprints": true,
+    "SaveProject": true,
+    
+    "PredictCompoundClasses": true,
+    "PredictDeNovoStructures": true,
+    "PredictStructures": true,
+    
+    "MS1MassTolerance": 2.0,
+    "MS2MassTolerance": 5.0,
+    
+    "FormulaMaxCandidates": 10,
+    "StructuresMaxCandidates": 10,
+    "DeNovoStructuresMaxCandidates": 10,
+    
+    "BottomUpSearch": true,
+    "CheckIsotopePattern": true,
+    "DeNovoMassThreshold": 400.0,
+    "ElementalConstraints": "C H F40 N O P4",
+    "EnforceRecognizedLipids": true,
+    "PubChemAsFallback": true,
+    "StructuresDatabases": ["PUBCHEM", "HMDB", "KEGG", "DSSTOX"]
+}

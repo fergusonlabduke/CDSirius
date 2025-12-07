@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Duke.FergusonLab.Common", "Duke.FergusonLab.Common\Duke.FergusonLab.Common.csproj", "{A034A962-9CA0-42E8-8564-CA6381ACC0ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Duke.FergusonLab.Server", "Duke.FergusonLab.Server\Duke.FergusonLab.Server.csproj", "{A942F545-A4C0-44E5-82A0-B43BB9150907}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Debug|Any CPU.Build.0 = Debug|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Debug|x64.ActiveCfg = Debug|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Debug|x64.Build.0 = Debug|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Release|Any CPU.ActiveCfg = Release|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Release|Any CPU.Build.0 = Release|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Release|x64.ActiveCfg = Release|x64
+		{A034A962-9CA0-42E8-8564-CA6381ACC0ED}.Release|x64.Build.0 = Release|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Debug|Any CPU.Build.0 = Debug|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Debug|x64.ActiveCfg = Debug|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Debug|x64.Build.0 = Debug|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Release|Any CPU.ActiveCfg = Release|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Release|Any CPU.Build.0 = Release|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Release|x64.ActiveCfg = Release|x64
+		{A942F545-A4C0-44E5-82A0-B43BB9150907}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C944E23-F8B2-49D6-89CF-A674B0B95041}
+	EndGlobalSection
+EndGlobal
