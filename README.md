@@ -1,9 +1,13 @@
 #  CDSirius
 
-CDSirius is an implementation of the [SIRIUS](https://v6.docs.sirius-ms.io/) suite within
-[Compound Discoverer 3.5](https://mycompounddiscoverer.com/). This software is intended to allow annotation of
-metabolites and other small molecules with molecular formulas, 2D structures, and compound classes based on acquisition
-of high-resolution, accurate mass MS/MS through data-dependent LC-MS/MS analysis of complex samples.
+CDSirius is an implementation of the [SIRIUS](https://v6.docs.sirius-ms.io/) suite maintained by the Böcker lab at University of Jena within
+[Compound Discoverer 3.5](https://mycompounddiscoverer.com/). This software is intended to allow annotation of metabolites and other small molecules with molecular formulas, 2D structures, and compound classes based on acquisition of high-resolution, accurate mass MS/MS through data-dependent LC-MS/MS analysis of complex samples.  Note that cdSirius will only work with high-resolution MS and MS/MS data, and has only been tested with data-dependent analysis (DDA) results.  It may work with DIA data, but no guarantees are given.
+
+Implementation of Sirius within Compound Discoverer is done through C# wrappers of core functions written in Python.  Within this implementation, Sirius runs on the host PC and is called as a background service during processing through the Sirius API.  Mass spectral data for discrete compounds detected by Compound Discoverer are passed to Sirius for processing, and results are reported back to CD and persisted to the result file for viewing and interpretation.  Linkages among CD compounds and Sirius results are maintained within the resulting tables.  Sirius results (formulas and structures) may be selected for use as annotation sources.
+
+When using CDSirius results in a publication, please be sure to cite the work that enabled creation of this resource.  Visit the Sirius development group's site referenced above for detailed citation information, and use the primary citation as follows:
+
+Kai Dührkop, Markus Fleischauer, Marcus Ludwig, Alexander A. Aksenov, Alexey V. Melnik, Marvin Meusel, Pieter C. Dorrestein, Juho Rousu and Sebastian Böcker. [SIRIUS 4: Turning tandem mass spectra into metabolite structure information](https://doi.org/10.1038/s41592-019-0344-8). _Nature Methods_ 16, 299–302, 2019.
 
 
 ## Project Info
