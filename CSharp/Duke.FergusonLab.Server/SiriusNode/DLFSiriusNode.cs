@@ -512,6 +512,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"Probability");
 			probability.GridDisplayOptions.VisiblePosition = position++;
 			probability.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			probability.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			var treeID = PropertyAccessorFactory.CreateConnectionPropertyAccessor<int>(
 				new PropertyDescription
@@ -574,6 +575,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"DeltaMassInDa");
 			deltaMassInDa.GridDisplayOptions.VisiblePosition = position++;
 			deltaMassInDa.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			deltaMassInDa.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 			deltaMassInDa.SetDefaultSortComparer(DefaultSortComparers.AbsoluteValuesFirst);
 
 			var deltaMassInPpm = PropertyAccessorFactory.CreateConnectionPropertyAccessor<double>(
@@ -587,6 +589,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"DeltaMassInPpm");
 			deltaMassInPpm.GridDisplayOptions.VisiblePosition = position++;
 			deltaMassInPpm.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			deltaMassInPpm.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 			deltaMassInPpm.SetDefaultSortComparer(DefaultSortComparers.AbsoluteValuesFirst);
 
 			var rank = PropertyAccessorFactory.CreateConnectionPropertyAccessor<int>(
@@ -599,6 +602,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"CSIRank");
 			rank.GridDisplayOptions.VisiblePosition = position++;
 			rank.GridDisplayOptions.TextHAlign = GridCellHAlign.Center;
+			rank.PlottingOptions = new PlottingOptions { PlotType = PlotType.NumericAndOrdinal };
 
 			var sciScore = PropertyAccessorFactory.CreateConnectionPropertyAccessor<double?>(
 				new PropertyDescription
@@ -612,6 +616,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"CSIScore");
 			sciScore.GridDisplayOptions.VisiblePosition = position++;
 			sciScore.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			sciScore.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			var tanimotoSim = PropertyAccessorFactory.CreateConnectionPropertyAccessor<double?>(
 				new PropertyDescription
@@ -625,6 +630,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				"TanimotoSimilarity");
 			tanimotoSim.GridDisplayOptions.VisiblePosition = position++;
 			tanimotoSim.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			tanimotoSim.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			// register connection properties
 			EntityDataService.RegisterConnectionProperties<ConsolidatedUnknownCompoundItem, TItem>(
@@ -691,6 +697,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 			m_compoundTopScoreAccessor.GridDisplayOptions.DataVisibility = GridVisibility.Visible;
 			m_compoundTopScoreAccessor.GridDisplayOptions.VisiblePosition = ++position;
 			m_compoundTopScoreAccessor.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			m_compoundTopScoreAccessor.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			// create CSI FingerID Tanimoto similarity
 			m_compoundTopSimilarityAccessor = PropertyAccessorFactory.CreateDynamicPropertyAccessor<ConsolidatedUnknownCompoundItem, double?>(
@@ -705,6 +712,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 			m_compoundTopSimilarityAccessor.GridDisplayOptions.DataVisibility = GridVisibility.Visible;
 			m_compoundTopSimilarityAccessor.GridDisplayOptions.VisiblePosition = ++position;
 			m_compoundTopSimilarityAccessor.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			m_compoundTopSimilarityAccessor.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			// create CSI FingerID exact confidence
 			m_compoundTopConfidenceExactAccessor = PropertyAccessorFactory.CreateDynamicPropertyAccessor<ConsolidatedUnknownCompoundItem, double?>(
@@ -719,6 +727,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 			m_compoundTopConfidenceExactAccessor.GridDisplayOptions.DataVisibility = GridVisibility.Visible;
 			m_compoundTopConfidenceExactAccessor.GridDisplayOptions.VisiblePosition = ++position;
 			m_compoundTopConfidenceExactAccessor.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			m_compoundTopConfidenceExactAccessor.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			// create CSI FingerID approximate confidence
 			m_compoundTopConfidenceApproxAccessor = PropertyAccessorFactory.CreateDynamicPropertyAccessor<ConsolidatedUnknownCompoundItem, double?>(
@@ -733,6 +742,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 			m_compoundTopConfidenceApproxAccessor.GridDisplayOptions.DataVisibility = GridVisibility.Visible;
 			m_compoundTopConfidenceApproxAccessor.GridDisplayOptions.VisiblePosition = ++position;
 			m_compoundTopConfidenceApproxAccessor.GridDisplayOptions.TextHAlign = GridCellHAlign.Right;
+			m_compoundTopConfidenceApproxAccessor.PlottingOptions = new PlottingOptions { PlotType = PlotType.Numeric };
 
 			// register properties
 			EntityDataService.RegisterProperties(
@@ -769,7 +779,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 						Description = "Top ClassyFire compound kingdom",
 						DataPurpose = DFLDataPurpose.ClassyFireLevel1,
 					}, "SiriusTopClassyFireLevel1");
-				
+
 				accessors.Add(m_compoundTopClassLevel1Accessor);
 			}
 
@@ -845,6 +855,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 				accessor.GridDisplayOptions.VisiblePosition = ++position;
 				accessor.GridDisplayOptions.ColumnWidth = 200;
 				accessor.GridDisplayOptions.TextHAlign = GridCellHAlign.Left;
+				accessor.PlottingOptions = new PlottingOptions { PlotType = PlotType.Ordinal };
 			}
 
 			// register properties

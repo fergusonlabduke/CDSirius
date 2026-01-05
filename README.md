@@ -105,6 +105,9 @@ The range of possible settings for Sirius is very large and the corresponding jo
 
 ## Changelog
 
+### v1.8
+- Plotting options set to items properties.
+
 ### v1.7
 - DLLs renamed to be consistent with CD and future ready.
 - Renamed "Class ID" to "ClassyFire ID".

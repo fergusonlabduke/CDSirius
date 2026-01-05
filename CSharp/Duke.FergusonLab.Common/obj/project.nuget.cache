@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HBohYLkOn1k=",
+  "dgSpecHash": "vq1L/SLFTeQ=",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Lee\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
+  "projectFilePath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\martin.strohalm\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\martin.strohalm\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

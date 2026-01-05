@@ -6,9 +6,9 @@
     <RootNamespace>Duke.FergusonLab.Common</RootNamespace>
     <LangVersion>8</LangVersion>
 
-    <Version>1.7.0</Version>
-    <AssemblyVersion>1.7.0.0</AssemblyVersion>
-    <FileVersion>1.7.0.0</FileVersion>
+    <Version>1.8.0</Version>
+    <AssemblyVersion>1.8.0.0</AssemblyVersion>
+    <FileVersion>1.8.0.0</FileVersion>
 
     <Authors>P. Lee Ferguson</Authors>
     <Company>Environmental Analytical Chemistry Laboratory, Duke University</Company>
@@ -45,7 +45,7 @@
 
   <ItemGroup>
     <Reference Include="Thermo.Discoverer.Infrastructure.Common">
-      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\Thermo.Discoverer.Infrastructure.Common.dll</HintPath>
+      <HintPath>C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer\Thermo.Discoverer.Infrastructure.Common.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Thermo.Discoverer.Infrastructure.Composite">
