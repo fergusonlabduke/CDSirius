@@ -30,7 +30,7 @@ to destroy running SIRIUS service if still running.
 - Fully licensed installation of Compound Discoverer 3.5.
 - SIRIUS user account.
 - [SIRIUS Suite 6.3.3](https://v6.docs.sirius-ms.io/)
-- [Python 3.11+](https://www.python.org)
+- [Python 3.11](https://www.python.org)
 - [Numpy](https://pypi.org/project/numpy/)
 - [pandas](https://pypi.org/project/pandas/)
 - [PySirius 6.3.3](https://github.com/sirius-ms/sirius-client-openAPI)
@@ -133,6 +133,18 @@ The range of possible settings for Sirius is very large and the corresponding jo
 - Keep hierarchy of classes.
 - Removing project even for crashed search.
 - Split candidates limits for structures and de-novo structures.
+
+## Troubleshooting
+
+### Python execution errors or failure to execute SIRIUSscript
+- Python should be installed as an administrator on the system path (e.g. at C:\\Program Files\\) and this should be a full Python installation.  Do not use e.g. Miniconda installations and do not install into a "User" profile.  Also, Python package dependencies should be installed in the base environment.  Do not use virtual environments for this installation.
+- Currently the CDSirius Node works properly with Python 3.11.  It has not been tested with later versions.
+### Error: Unable to initialize SIRIUS project space
+- Presence of some special characters in the CDResult file name (e.g. hyphens, periods, parentheses, etc.) can cause the CDSirius Node processing to fail because the corresponding SIRIUS project space name is invalid.  Best practice is to use only alphanumeric characters and underscore (_) in CDResult file names.
+### Very slow CDSirius processing
+- Although SIRIUS processing can be time consuming for large datasets under normal circumstances, it has been observed that certain antivirus software causes a very severe slowdown of SIRIUS itself, seemingly because of communication between the local SIRIUS installation and remote SIRIUS servers.  This behavior is not unique to CDSirius but can also be observed when running SIRIUS within the GUI.
+### CDSirius Node fails to start for commercial (non-academic) licensees
+- Users who are working with SIRIUS under a non-academic license must specifically request a license that allows API access in order to use the CDSirius Node.  Please contact BrightGiant for details.
 
 ## Disclaimer
 
