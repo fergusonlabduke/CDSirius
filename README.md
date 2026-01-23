@@ -105,6 +105,9 @@ The range of possible settings for Sirius is very large and the corresponding jo
 
 ## Changelog
 
+### v1.9
+- Fixed node crash if on invalid SMILES structure.
+
 ### v1.8
 - Plotting options set to items properties.
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {}
+    "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {}
   },
   "projects": {
-    "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
-      "version": "1.8.0",
+    "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
+      "version": "1.9.0",
       "restore": {
-        "projectUniqueName": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
+        "projectUniqueName": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
         "projectName": "Duke.FergusonLab.Common",
-        "projectPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
+        "projectPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
         "packagesPath": "C:\\Users\\martin.strohalm\\.nuget\\packages\\",
-        "outputPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\obj\\",
+        "outputPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

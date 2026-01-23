@@ -1553,8 +1553,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 					};
 
 					// convert structure
-					var molString = StructureUtilities.CreateStructureFromSmilesString(resultData.SMILES, false, false)?.MolStructure;
-					if (molString.IsNullOrEmpty() == false)
+					if (StructureUtilities.TryCreateMolFromSmilesString(resultData.SMILES, out var molString, false, false))
 					{
 						resultItem.MolStructure = molString;
 						resultItem.InChI = StructureUtilities.CreateInChIFromMolString(molString, false);
