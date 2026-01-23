@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj": {}
+    "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj": {}
   },
   "projects": {
-    "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
-      "version": "1.8.0",
+    "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
+      "version": "1.9.0",
       "restore": {
-        "projectUniqueName": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
+        "projectUniqueName": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
         "projectName": "Duke.FergusonLab.Common",
-        "projectPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
+        "projectPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj",
         "packagesPath": "C:\\Users\\martin.strohalm\\.nuget\\packages\\",
-        "outputPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\obj\\",
+        "outputPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj": {
-      "version": "1.8.0",
+    "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj": {
+      "version": "1.9.0",
       "restore": {
-        "projectUniqueName": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj",
+        "projectUniqueName": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj",
         "projectName": "Duke.FergusonLab.Server",
-        "projectPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj",
+        "projectPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\Duke.FergusonLab.Server.csproj",
         "packagesPath": "C:\\Users\\martin.strohalm\\.nuget\\packages\\",
-        "outputPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\obj\\",
+        "outputPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -104,8 +104,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
-                "projectPath": "C:\\Xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj"
+              "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj": {
+                "projectPath": "C:\\xxao\\Projects\\SIRIUS\\FergusonLabNodes\\CSharp\\Duke.FergusonLab.Common\\Duke.FergusonLab.Common.csproj"
               }
             }
           }
@@ -146,20 +146,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
