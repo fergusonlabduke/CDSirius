@@ -24,10 +24,13 @@ class SiriusConfig(object):
     def __init__(self):
         """Initializes a new instance of SiriusConfig."""
         
+        # message silencer
+        self.silence_api: bool = True
+        
         # main service
         self.service_path: str = r"C:\Program Files\Sirius\sirius.exe"
         self.service_port: int | None = 8080
-        
+
         # project space
         self.project_name: str = ""
         self.project_path: str = ""
@@ -83,7 +86,7 @@ class Sirius(object):
         """Implements context manager."""
         
         # silence errors from SIRIUS
-        with Silencer(stdout=False, stderr=True):
+        with Silencer(stdout=False, stderr=self._config.silence_api):
             
             # connect to existing service
             if not self.connect():
@@ -103,7 +106,7 @@ class Sirius(object):
         """Implements context manager."""
         
         # silence errors from SIRIUS
-        with Silencer(stdout=False, stderr=True):
+        with Silencer(stdout=False, stderr=self._config.silence_api):
             self.shutdown()
     
     

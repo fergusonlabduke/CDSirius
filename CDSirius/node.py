@@ -100,6 +100,9 @@ class CDSirius(object):
         # init config
         config = SiriusConfig()
         
+        # set silencer
+        config.silence_api = bool(settings.get("SilenceAPI", True))
+        
         # set SIRIUS service
         config.service_path = settings["SiriusPath"]
         config.service_port = settings["SiriusPort"]
@@ -123,7 +126,7 @@ class CDSirius(object):
         config.formula_id_perform_denovo_below_mz = float(self._params["DeNovoMassThreshold"])
         
         # init elements constraints
-        constraints = re.findall("([A-Z][a-z]*)(\d*)?", self._params["ElementalConstraints"])
+        constraints = re.findall(r"([A-Z][a-z]*)(\d*)?", self._params["ElementalConstraints"])
         config.formula_id_enforced_formula_constraints = "".join(f"{e}[{c}]" for e, c in constraints)
         
         # set compound class search

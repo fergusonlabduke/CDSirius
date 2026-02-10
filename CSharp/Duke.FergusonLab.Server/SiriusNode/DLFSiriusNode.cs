@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------------
-// Copyright (c) 2025, Lee Ferguson Lab @ Duke
+// Copyright (c) 2025-2026, Lee Ferguson Lab @ Duke
 // All rights reserved
 //-----------------------------------------------------------------------------
 
@@ -1712,7 +1712,7 @@ namespace Duke.FergusonLab.Server.SiriusNode
 			var path = Path.Combine(outputDir, $"{outputName}.json");
 			if (File.Exists(path) == false)
 			{
-				SendAndLogErrorMessage($"Output file not found: '{path}'");
+				SendAndLogWarningMessage($"Output file not found: '{path}'");
 				yield break;
 			}
 

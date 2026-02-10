@@ -1,0 +1,10 @@
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\bin\Duke.FergusonLab.Server.dll
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\bin\Duke.FergusonLab.Server.pdb
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.csproj.AssemblyReference.cache
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.AssemblyInfoInputs.cache
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.AssemblyInfo.cs
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.csproj.CoreCompileInputs.cache
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.Fer.B47CC4AA.Up2Date
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.dll
+C:\Xxao\Projects\SIRIUS\FergusonLabNodes\CSharp\Duke.FergusonLab.Server\obj\x64\Debug\Duke.FergusonLab.Server.pdb

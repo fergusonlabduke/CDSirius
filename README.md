@@ -77,7 +77,7 @@ After adding the node to the workflow, the processing configuration dialogue is 
 ### CDSirius parameter settings
 The range of possible settings for Sirius is very large and the corresponding job configurations can become quite complicated.  The settings available within cdSirius represent a subset of possible parameters, chosen based on their general applicability and typical use cases.  A complete guide for Sirius job parameters is beyond the scope of this program, but extensive documentation is available for Sirius [elsewhere](https://v6.docs.sirius-ms.io/methods-background/).
 1.  **General Settings:**  These are global settings for the Sirius program service.
-   - <ins>MS1 Mass Tolerance</ins>: The known mass accuracy threshold (in ppm) for your MS1 data.  Default = 2 ppm.  _This is a critical parameter and must be set accordingly.  If your instrument is equipped with EasyIC, it is suggested that you use it_`
+   - <ins>MS1 Mass Tolerance</ins>: The known mass accuracy threshold (in ppm) for your MS1 data.  Default = 2 ppm.  _This is a critical parameter and must be set accordingly.  If your instrument is equipped with EasyIC, it is suggested that you use it_
    - <ins>MS2 Mass Tolerance</ins>: The known mass accuracy threshold (in ppm) for your MS2 data.  Default = 5 ppm.  _This is also critical and is often a less accurate measure than for MS1, especially when using lower resolutions (e.g. 15K).  It is not recommended to use EasyIC for Orbitrap MS2 with resolutions < 60K_
    - <ins>Predict Compound Classes</ins>: When this parameter is set to "True", the CANOPUS implementation of the ClassyFire algorithm is used to predict compound classes from molecular fingerprints.
    - <ins>Predict Structures</ins>: Toggle enabling CSI:FingerID database search
@@ -104,6 +104,10 @@ The range of possible settings for Sirius is very large and the corresponding jo
    -  <ins>Checked Only</ins>: This is a switch that allows for down-selection of only compounds of interest when CDSirius is used in reprocessing of existing cdResult files.  Selecting "Checked" will pass only "checked" compounds to Sirius for calculation. The default of "All" will pass all compounds to the Sirius service.  **Note**: The default setting of "False" must be used when including the CDSirius node in a full processing workflow.  Checked status is only available for reprocessing of previously processed results.
 
 ## Changelog
+
+### v1.10
+- Lower error level for some messages.
+- Allow SIRIUS API messages for debugging.
 
 ### v1.9
 - Fixed node crash on invalid SMILES structure.
@@ -148,6 +152,25 @@ The range of possible settings for Sirius is very large and the corresponding jo
 - Although SIRIUS processing can be time consuming for large datasets under normal circumstances, it has been observed that certain antivirus software causes a very severe slowdown of SIRIUS itself, seemingly because of communication between the local SIRIUS installation and remote SIRIUS servers.  This behavior is not unique to CDSirius but can also be observed when running SIRIUS within the GUI.
 ### CDSirius Node fails to start for commercial (non-academic) licensees
 - Users who are working with SIRIUS under a non-academic license must specifically request a license that allows API access in order to use the CDSirius Node.  Please contact BrightGiant for details.
+
+### In some cases the Python part of the node cannot finish successfully, showing the *Failed to execute SIRIUS script: exitCode=1*
+message in Compound Discoverer JobQueue. This is mostly cased by missing Python modules, access rights, credentials or incorrect
+paths or communication problems with SIRIUS API. To help investigating the issue our code base contains sample data prepared
+to be run directly outside Compound Discoverer.
+
+1) Download the full CDSirius code base and unpack all into your working folder (outside Compound Discoverer).
+
+2) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
+and SIRIUS paths according to your installation. Specify your SIRIUS account username and password. The SIRIUS REST API
+port can be changed as well if needed.
+
+3) From the same folder run *python node.py* to start processing.
+
+4) Investigate the log messages.
+
+5) In case you still did not find the root cause, enable original SIRIUS API messages by adding *SilenceAPI": false*
+to the same *settings.json* file and start processing again. Please note that this settings should not be used for
+processing by Compound Discoverer, since it may cause unexpected errors!
 
 ## Disclaimer
 
