@@ -146,6 +146,12 @@ The range of possible settings for Sirius is very large and the corresponding jo
 ### Python execution errors or failure to execute SIRIUSscript
 - Python should be installed as an administrator on the system path (e.g. at C:\\Program Files\\) and this should be a full Python installation.  Do not use e.g. Miniconda installations and do not install into a "User" profile.  Also, Python package dependencies should be installed in the base environment.  Do not use virtual environments for this installation.
 - Currently the CDSirius Node works properly with Python 3.11.  It has not been tested with later versions.
+- In some cases the Python part of the node cannot finish successfully, showing the *Failed to execute SIRIUS script: exitCode=1* message in Compound Discoverer JobQueue. This is mostly cased by missing Python modules, access rights, credentials or incorrect paths or communication problems with SIRIUS API. To help investigating the issue our code base contains sample data prepared to be run directly outside Compound Discoverer.
+1) Download the full CDSirius code base and unpack all into your working folder (outside Compound Discoverer).
+2) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python and SIRIUS paths according to your installation. Specify your SIRIUS account username and password. The SIRIUS REST API port can be changed as well if needed.
+3) From the same folder run *python node.py* to start processing.
+4) Investigate the log messages.
+5) In case you still did not find the root cause, enable original SIRIUS API messages by adding *SilenceAPI": false* to the same *settings.json* file and start processing again. Please note that this settings should not be used for processing by Compound Discoverer, since it may cause unexpected errors!
 ### Error: Unable to initialize SIRIUS project space
 - Presence of some special characters in the CDResult file name (e.g. hyphens, periods, parentheses, etc.) can cause the CDSirius Node processing to fail because the corresponding SIRIUS project space name is invalid.  Best practice is to use only alphanumeric characters and underscore (_) in CDResult file names.
 ### Very slow CDSirius processing
@@ -158,19 +164,7 @@ message in Compound Discoverer JobQueue. This is mostly cased by missing Python 
 paths or communication problems with SIRIUS API. To help investigating the issue our code base contains sample data prepared
 to be run directly outside Compound Discoverer.
 
-1) Download the full CDSirius code base and unpack all into your working folder (outside Compound Discoverer).
 
-2) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
-and SIRIUS paths according to your installation. Specify your SIRIUS account username and password. The SIRIUS REST API
-port can be changed as well if needed.
-
-3) From the same folder run *python node.py* to start processing.
-
-4) Investigate the log messages.
-
-5) In case you still did not find the root cause, enable original SIRIUS API messages by adding *SilenceAPI": false*
-to the same *settings.json* file and start processing again. Please note that this settings should not be used for
-processing by Compound Discoverer, since it may cause unexpected errors!
 
 ## Disclaimer
 
