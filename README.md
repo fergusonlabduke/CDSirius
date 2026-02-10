@@ -30,38 +30,45 @@ to destroy running SIRIUS service if still running.
 - Fully licensed installation of Compound Discoverer 3.5.
 - SIRIUS user account.
 - [SIRIUS Suite 6.3.3](https://v6.docs.sirius-ms.io/)
+- [Git](https://git-scm.com/install/windows)
 - [Python 3.11](https://www.python.org)
 - [Numpy](https://pypi.org/project/numpy/)
 - [pandas](https://pypi.org/project/pandas/)
-- [PySirius 6.3.3](https://github.com/sirius-ms/sirius-client-openAPI)
+- [PySirius 6.3.3](https://github.com/sirius-ms/sirius-client-openAPI/tree/master/client-api_python#installation--usage)
 
 
 ## Installation
 
-1) Install [SIRIUS](https://v6.docs.sirius-ms.io/) program and create user account.
+1) Install [SIRIUS](https://github.com/sirius-ms/sirius/releases) program and create user account.
 
-2) Install [Python](https://www.python.org) and required dependencies.
+2) Install [Git](https://git-scm.com/install/windows) for Windows and ensure that the git executable is in the system PATH.
 
-3) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
+3) Install [Python](https://www.python.org) and required dependencies. Python should be installed as an administrator on the system path (e.g. at C:\\Program Files\\) and this should be a full Python installation.  It is recommended that you select "Custom Installation" and ensure that the Pip package manager is included.  Do not use e.g. Miniconda installations and do not install into a "User" profile.  Also, Python package dependencies should be installed in the base environment.  Do not use virtual environments for this installation.  Ensure that both the Python and Pip executables are in the system PATH.
+	- For Numpy, install from the Windows Terminal command line using Pip as: `pip install numpy`
+	- For pandas, install from the Windows Terminal command line using Pip as: `pip install pandas`
+	- For PySirius install from the Windows Terminal command line using Pip as: `pip install git+https://github.com/sirius-ms/sirius-client-openAPI@v6.3.3#subdirectory=client-api_python/generated`
+   Test the package installations by starting Python from the Windows Terminal and running the command `import numpy,pandas,PySirius`.  The packages should load with no error messages.
+
+4) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
 and SIRIUS paths according to your installation. Specify your SIRIUS account username and password. The SIRIUS REST API
 port can be changed as well if needed.
 
-4) Copy the whole *CDSirius* folder to Compound Discoverer installation tools folder:
+5) Copy the whole *CDSirius* folder to Compound Discoverer installation tools folder:
 *C:\Program Files\Thermo\Compound Discoverer 3.5\Tools\\*
 
-5) From the *CSharp\bin\* folder copy all files to Compound Discoverer server installation folder:
+6) From the *CSharp\bin\* folder copy all files to Compound Discoverer server installation folder:
 *C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer.Server\\*
 
-6) From the *CSharp\bin\* folder copy *Duke.FergusonLab.Common.dll* and *Duke.FergusonLab.Common.pdb* files to Compound
+7) From the *CSharp\bin\* folder copy *Duke.FergusonLab.Common.dll* and *Duke.FergusonLab.Common.pdb* files to Compound
 Discoverer client installation folder:
 *C:\Program Files\Thermo\Compound Discoverer 3.5\Thermo.CompoundDiscoverer\\*
 
-7) Make sure the copied files are not blocked by your system. Right-click individual files, select properties and
+8) Make sure the copied files are not blocked by your system. Right-click individual files, select properties and
 check the "Unblock" checkbox if available.
 
-8) Launch Compound Discoverer and navigate to the Help -> License Manager dialogue. Run "Scan for Missing Features".
+9) Launch Compound Discoverer and navigate to the Help -> License Manager dialogue. Run "Scan for Missing Features".
 
-9) Restart Compound Discoverer to complete installation and allow new nodes to be registered.
+10) Restart Compound Discoverer to complete installation and allow new nodes to be registered.
 
 ## Using CDSirius within a Compound Discoverer workflow
 The CDSirius node is a "Compound Identification" node that can be included in an existing full processing workflow, or it can be used in a "reprocessing" workflow to retrospectively add Sirius results to the cdResult file.  Either way, you will find the Search by SIRIUS node within the Workflow Editor Node menu, in the _7. Compound Identification_ sub menu:
@@ -144,7 +151,6 @@ The range of possible settings for Sirius is very large and the corresponding jo
 ## Troubleshooting
 
 ### Python execution errors or failure to execute SIRIUSscript
-- Python should be installed as an administrator on the system path (e.g. at C:\\Program Files\\) and this should be a full Python installation.  Do not use e.g. Miniconda installations and do not install into a "User" profile.  Also, Python package dependencies should be installed in the base environment.  Do not use virtual environments for this installation.
 - Currently the CDSirius Node works properly with Python 3.11.  It has not been tested with later versions.
 - In some cases the Python part of the node cannot finish successfully, showing the *Failed to execute SIRIUS script: exitCode=1* message in Compound Discoverer JobQueue. This is mostly cased by missing Python modules, access rights, credentials or incorrect paths or communication problems with SIRIUS API. To help investigating the issue our code base contains sample data prepared to be run directly outside Compound Discoverer.
 	1) Download the full CDSirius code base and unpack all into your working folder (outside Compound Discoverer).
