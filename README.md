@@ -46,7 +46,7 @@ to destroy running SIRIUS service if still running.
 3) Install [Python](https://www.python.org) and required dependencies. Python should be installed as an administrator on the system path (e.g. at C:\\Program Files\\) and this should be a full Python installation.  It is recommended that you select "Custom Installation" and ensure that the Pip package manager is included.  Do not use e.g. Miniconda installations and do not install into a "User" profile.  Also, Python package dependencies should be installed in the base environment.  Do not use virtual environments for this installation.  Ensure that both the Python and Pip executables are in the system PATH.
 	- For Numpy, install from the Windows Terminal command line using Pip as: `pip install numpy`
 	- For pandas, install from the Windows Terminal command line using Pip as: `pip install pandas`
-	- For PySirius install from the Windows Terminal command line using Pip as: `pip install git+https://github.com/sirius-ms/sirius-client-openAPI@v6.3.3#subdirectory=client-api_python/generated`
+	- For PySirius install from the Windows Terminal command line using Pip as: `pip install git+https://github.com/sirius-ms/sirius-client-openAPI#subdirectory=client-api_python/generated`
    Test the package installations by starting Python from the Windows Terminal and running the command `import numpy,pandas,PySirius`.  The packages should load with no error messages.
 
 4) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
