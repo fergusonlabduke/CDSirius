@@ -47,7 +47,7 @@ to destroy running SIRIUS service if still running.
 	- For Numpy, install from the Windows Terminal command line using Pip as: `pip install numpy`
 	- For pandas, install from the Windows Terminal command line using Pip as: `pip install pandas`
 	- For PySirius install from the Windows Terminal command line using Pip as: `pip install git+https://github.com/sirius-ms/sirius-client-openAPI@3.1+sirius6.3.3#subdirectory=client-api_python/generated`
-   Test the package installations by starting Python from the Windows Terminal and running the command `import numpy,pandas,PySirius`.  The packages should load with no error messages.
+Test the package installations by starting Python from the Windows Terminal and running the command `import numpy,pandas,PySirius`.  The packages should load with no error messages.
 
 4) Inside the *CDSirius* folder locate the *settings.json* file and open it in a plain text editor. Modify the Python
 and SIRIUS paths according to your installation. Specify your SIRIUS account username and password. The SIRIUS REST API
